@@ -1,10 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using WeatherService.Api.Interfaces;
 
 namespace WeatherService.Api
 {
-    public class WeatherDataStore
+    public class WeatherDataStore : IWeatherDataStore
     {
         private static readonly string[] Summaries = new[]
         {
