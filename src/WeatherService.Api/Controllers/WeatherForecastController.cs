@@ -10,12 +10,10 @@ namespace WeatherService.Api.Controllers
     {
         private readonly IWeatherLogic logic;
 
-        public WeatherForecastController()
+        public WeatherForecastController(IWeatherLogic weatherLogic)
         {
-            logic = new WeatherLogic();
+            logic = weatherLogic;
         }
-
-        public IWeatherLogic WeatherLogic { get; }
 
         [HttpGet]
         public IEnumerable<WeatherForecast> Get()

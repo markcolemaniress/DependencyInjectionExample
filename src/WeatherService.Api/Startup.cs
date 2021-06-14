@@ -10,6 +10,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using WeatherService.Api.Interfaces;
 
 namespace WeatherService.Api
 {
@@ -26,6 +27,8 @@ namespace WeatherService.Api
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
+            services.AddTransient<IWeatherDataStore, WeatherDataStore>();
+            services.AddTransient<IWeatherLogic, WeatherLogic>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

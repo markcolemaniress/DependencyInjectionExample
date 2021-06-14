@@ -7,11 +7,6 @@ namespace WeatherService.Api
     {
         private readonly IWeatherDataStore dataStore;
 
-        public WeatherLogic()
-        {
-            dataStore = new WeatherDataStore();
-        }
-
         public WeatherLogic(IWeatherDataStore weatherDataStore)
         {
             dataStore = weatherDataStore;
