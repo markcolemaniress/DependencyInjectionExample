@@ -20,7 +20,7 @@ namespace WeatherService.Api
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
-            services.AddTransient<IWeatherDataStore, WeatherDataStore>();
+            services.AddTransient<IWeatherDataStore, WeatherApiStore>();
             services.AddTransient<IWeatherLogic, WeatherLogic>();
         }
 
