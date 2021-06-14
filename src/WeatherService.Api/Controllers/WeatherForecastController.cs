@@ -8,11 +8,9 @@ namespace WeatherService.Api.Controllers
     [Route("[controller]")]
     public class WeatherForecastController : ControllerBase
     {
-        private readonly IWeatherLogic logic;
-
         public WeatherForecastController()
         {
-            logic = new WeatherLogic();
+            WeatherLogic = new WeatherLogic();
         }
 
         public IWeatherLogic WeatherLogic { get; }
@@ -20,7 +18,7 @@ namespace WeatherService.Api.Controllers
         [HttpGet]
         public IEnumerable<WeatherForecast> Get()
         {
-            return logic.GetWeather();
+            return WeatherLogic.GetWeather();
         }
     }
 }
